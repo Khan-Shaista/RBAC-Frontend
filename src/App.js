@@ -6,6 +6,9 @@ import ManagerDashboard from "./components/ManagerDashboard";
 import CashierDashboard from "./components/CashierDashboard";
 import RegistrationForm from "./components/RegistrationForm";
 import UpdateUserForm from "./components/UpdateUserForm";
+import UserCreateForm from "./components/UserCreateForm";
+import CashierCreateForm from "./components/CashierCreateForm";
+import CashierUpdateForm from "./components/CashierUpdateForm";
 
 function App() {
   return (
@@ -15,6 +18,10 @@ function App() {
       <Route path="/manager-dashboard" element={<ManagerDashboard />} />
       <Route path="/cashier-dashboard" element={<CashierDashboard />} />
       <Route path="/update/:id" element={<UpdateUserForm />} />
+      <Route path="/create-user" element={<UserCreateForm />} />
+      <Route path="/Create" element={<CashierCreateForm/>} />
+      <Route path="/Update-cashier/:id" element={<CashierUpdateForm/>} />
+
     </Routes>
   );
 }

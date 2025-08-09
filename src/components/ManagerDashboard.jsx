@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ManagerDashboard() {
   const [cashiers, setCashiers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate(); 
+  const handleCreateUser = () => {
+  navigate("/create-user"); 
+};
 
   // Fetch cashiers from backend
   useEffect(() => {
@@ -110,6 +115,15 @@ export default function ManagerDashboard() {
       <h1 className="text-4xl font-bold text-center mb-10 text-purple-800">
         Manager Dashboard
       </h1>
+
+      <div className="flex justify-end mb-6">
+  <button
+    onClick={handleCreateUser}
+    className="px-6 py-3 rounded-full text-lg font-semibold transition bg-purple-700 text-white shadow-md hover:bg-purple-800"
+  >
+    Create
+  </button>
+</div>
 
       {loading ? (
         <div className="text-center text-purple-700 text-lg font-medium">
